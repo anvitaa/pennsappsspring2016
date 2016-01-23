@@ -45,15 +45,17 @@ if (Meteor.isClient) {
     }
   });
 
-
+  Template.navigation.events({
+    'click .logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+        Router.go('login');
+    }
+  });
 }
-
-
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
   });
 }
-
-
