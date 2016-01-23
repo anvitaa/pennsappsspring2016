@@ -1,5 +1,12 @@
-/* CSS declarations go here */
 body {
 	background-color: #C2EAFD;
 	font-family: 'Open Sans', sans-serif;
+}
+
+.register {
+	margin-top: 10%;
+	background-color: #F3FBFE;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-radius: 10px;
 }
