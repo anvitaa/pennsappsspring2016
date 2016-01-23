@@ -52,6 +52,10 @@
   <p>{{status}}</p>
 </template>
 
+<template name="main">
+	{{> yield}}
+</template>
+
 <template name="home">
     <h1 align="center">Welcome to the Penn WiCS Database</h1>
    {{#if currentUser}}
