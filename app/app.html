@@ -72,7 +72,7 @@
 
 <template name="user">
   <p>{{firstName}}</p>
-  <p> helloooo</p>
+  <p>{{status}}</p>
 </template>
 
 <template name="home">
@@ -82,8 +82,13 @@
   		{{> user}}
   		<h3>Edit Profile:</h3>
   		<form class="profile">
-    		<p>First Name: <input type="text" name="firstname"></p>
+    		<p>First Name: <input type="text" name="firstname" value="{{firstName}}"></p>
     		<p>Last Name: <input type="text" name="lastname"></p>
+    		<p>Current Status: 
+    			<input type="radio" name="status" value="undergrad">Undergrad Student 
+    			<input type="radio" name="status" VALUE="grad">Grad Student
+    			<input type="radio" name="status" VALUE="alumna">Alumna
+    		</p>
     		<p><input type="submit" value="Update"></p>
   		</form>
 

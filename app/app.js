@@ -41,39 +41,51 @@ if (Meteor.isClient) {
       event.preventDefault();
       var first = $('[name=firstname]').val();
       var last = $('[name=lastname]').val();
+      var status = $('[name=status]').val();
       var data = {
         first: first,
-        last: last
+        last: last,
+        status: status
       }
       console.log("Inside submit form", Meteor.user());
       Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
     }
   })
 
-  Meteor.loginWithPassword(email, password, function(error){
-    if(error){
-        console.log(error.reason);
-    } else {
-        Router.go("home");
-    }
-  });
+  // Meteor.loginWithPassword(email, password, function(error){
+  //   if(error){
+  //       console.log(error.reason);
+  //   } else {
+  //       Router.go("home");
+  //   }
+  // });
 
-  Template.navigation.events({
-    'click .logout': function(event){
-        event.preventDefault();
-        Meteor.logout();
-        Router.go('login');
-    }
-  });
+  // Template.navigation.events({
+  //   'click .logout': function(event){
+  //       event.preventDefault();
+  //       Meteor.logout();
+  //       Router.go('login');
+  //   }
+  // });
 
   Template.user.helpers({
   firstName: function() {
-    console.log("Inside first name", Meteor.user());
     var user = Meteor.user();
     if (user.profile) {
       return user.profile.first;
     } else {
       return "unknown user";
+    }
+  }
+  });
+
+  Template.user.helpers({
+  status: function() {
+    var user = Meteor.user();
+    if (user.profile) {
+      return user.profile.status;
+    } else {
+      return "Unknown Status";
     }
   }
   });
