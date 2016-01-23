@@ -2,11 +2,7 @@ if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
+  
 
   Template.register.events({
     'submit form': function(event){
@@ -24,17 +20,15 @@ if (Meteor.isClient) {
   Template.navigation.events({
     'click .logout': function(event){
         event.preventDefault();
-<<<<<<< HEAD
+
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
-=======
         Meteor.logout();
->>>>>>> fd05de6a42f0bda589033cc4cce062459c86ef0b
     }
 });
 
 
-<<<<<<< HEAD
+
   Template.home.events({
     'submit form': function(event){
       event.preventDefault();
@@ -51,32 +45,37 @@ if (Meteor.isClient) {
     }
   })
 
-  // Meteor.loginWithPassword(email, password, function(error){
-  //   if(error){
-  //       console.log(error.reason);
-  //   } else {
-  //       Router.go("home");
-  //   }
-  // });
-
-  // Template.navigation.events({
-  //   'click .logout': function(event){
-  //       event.preventDefault();
-  //       Meteor.logout();
-  //       Router.go('login');
-  //   }
-  // });
+ 
+  Template.navigation.events({
+    'click .logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+        Router.go('login');
+    }
+  });
 
   Template.user.helpers({
-  firstName: function() {
-    var user = Meteor.user();
-    if (user.profile) {
-      return user.profile.first;
-    } else {
-      return "unknown user";
+    firstName: function() {
+      var user = Meteor.user();
+      if (user.profile) {
+        return user.profile.first;
+      } else {
+        return "unknown user";
+      }
     }
-  }
-=======
+  });
+  Template.user.helpers({
+    status: function() {
+      var user = Meteor.user();
+      if (user.profile) {
+        return user.profile.status;
+      } else {
+        return "Unknown Status";
+      }
+    }
+  });
+  
+
   Template.login.events({
     'submit form': function(event){
       event.preventDefault();
@@ -94,20 +93,10 @@ if (Meteor.isClient) {
       alert(email+ "works");
     }
     
->>>>>>> fd05de6a42f0bda589033cc4cce062459c86ef0b
   });
   
 
-  Template.user.helpers({
-  status: function() {
-    var user = Meteor.user();
-    if (user.profile) {
-      return user.profile.status;
-    } else {
-      return "Unknown Status";
-    }
-  }
-  });
+ 
 }
 
 

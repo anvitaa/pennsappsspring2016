@@ -22,36 +22,8 @@
 
     <!-- <nav id="topnav-wrapper"> -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<<<<<<< HEAD
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{pathFor route='home'}}">Home</a>
-                </li>
-                <li>
-                    <a href="{{pathFor route='members'}}">Members</a>
-                </li>
-                <li>
-                    <a href="{{pathFor route='discussion'}}">Discussion</a>
-                </li>
-                <li>
-                    <a href="#faq">FAQ</a>
-                </li>
-                <li>
-                    <a href="#edit">Edit Profile</a>
-                </li>
-                {{#if currentUser}}
-                <li>
-                    <a href="{{pathFor route='home'}}" class="logout">Log Out</a>
-                </li>
-                {{else}}
-                <li>
-                    <a href="{{pathFor route='login'}}">Log In</a>
-                </li>
-                  {{/if}}
-=======
  			<ul class="nav navbar-nav navbar-right">
                {{> navigation}}
->>>>>>> fd05de6a42f0bda589033cc4cce062459c86ef0b
             </ul>
         </div>
     </nav>
