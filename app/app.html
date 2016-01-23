@@ -17,7 +17,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand topnav" href="#">Bitches Who Code</a>
+            <a class="navbar-brand topnav" href="{{pathFor route='home'}}">Bitches Who Code</a>
         </div>
 
     <!-- <nav id="topnav-wrapper"> -->
@@ -38,9 +38,16 @@
                 <li>
                     <a href="#edit">Edit Profile</a>
                 </li>
+                  {{#if currentUser}}
                 <li>
                     <a href="#logout">Log Out</a>
                 </li>
+                {{else}}
+
+                 <li>
+                    <a href="{{pathFor route='login'}}">Log In</a>
+                </li>
+                  {{/if}}
             </ul>
         </div>
     </nav>
@@ -78,6 +85,9 @@
 
 <template name="home">
     <h1 align="center">Welcome to the Penn WiCS Database</h1>
+   {{#if currentUser}}
+	<div>YOU ARE LOGGED IN</div>
+	{{else}}
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
@@ -90,13 +100,12 @@
 			</div>
 		</div>
 	</div>
+	{{/if}}
 </template>
 
-<template name="dashboard">
-    <h1>Welcome</h1>
-</template>
 
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
+

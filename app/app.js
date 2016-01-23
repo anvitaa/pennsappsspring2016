@@ -56,9 +56,4 @@ if (Meteor.isServer) {
   });
 }
 
-Router.route('/register');
-Router.route('/login');
 
-Router.route('/', function () {
-  this.render('dashboard');
-});
