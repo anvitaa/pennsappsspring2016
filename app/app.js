@@ -8,13 +8,6 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-
   Template.register.events({
     'submit form': function(event){
       event.preventDefault();
@@ -54,9 +47,6 @@ if (Meteor.isClient) {
     }
     
   });
-
- 
-  
   
 
   Template.navigation.events({
@@ -67,6 +57,8 @@ if (Meteor.isClient) {
     }
   });
 }
+
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
