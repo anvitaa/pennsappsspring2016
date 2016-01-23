@@ -8,34 +8,33 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-
   Template.register.events({
     'submit form': function(event){
-       event.preventDefault();
-        var email = $('[name=email]').val();
-        var password = $('[name=password]').val();
-        Accounts.createUser({
-            email: email,
-            password: password
-        });
-
+      event.preventDefault();
+      var email = $('[name=email]').val();
+      var password = $('[name=password]').val();
+      Accounts.createUser({            
+        email: email,
+        password: password
+      });
+      Router.go('home');
     }
-  });
 
-  Template.login.events({
-    'submit form': function(event){
+  });
+  Template.navigation.events({
+    'click .logout': function(event){
         event.preventDefault();
+<<<<<<< HEAD
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
+=======
+        Meteor.logout();
+>>>>>>> fd05de6a42f0bda589033cc4cce062459c86ef0b
     }
-  });
+});
 
+
+<<<<<<< HEAD
   Template.home.events({
     'submit form': function(event){
       event.preventDefault();
@@ -77,7 +76,27 @@ if (Meteor.isClient) {
       return "unknown user";
     }
   }
+=======
+  Template.login.events({
+    'submit form': function(event){
+      event.preventDefault();
+      var email = $('[name=loginemail]').val();
+      var password = $('[name=loginpassword]').val();
+      alert(email+ "hishiahfihaih");
+      Meteor.loginWithPassword(email, password, function(error){
+        if(error){
+          console.log(error.reason);
+        } else {
+         
+          Router.go("home");
+        }
+      });
+      alert(email+ "works");
+    }
+    
+>>>>>>> fd05de6a42f0bda589033cc4cce062459c86ef0b
   });
+  
 
   Template.user.helpers({
   status: function() {
@@ -90,6 +109,8 @@ if (Meteor.isClient) {
   }
   });
 }
+
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
