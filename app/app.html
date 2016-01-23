@@ -40,7 +40,7 @@
                 </li>
                 {{#if currentUser}}
                 <li>
-                    <a href="#logout" class="logout">Log Out</a>
+                    <a href="{{pathFor route='home'}}" class="logout">Log Out</a>
                 </li>
                 {{else}}
                 <li>
@@ -70,10 +70,23 @@
     </form>
 </template>
 
+<template name="user">
+  <p>{{firstName}}</p>
+  <p> helloooo</p>
+</template>
+
 <template name="home">
     <h1 align="center">Welcome to the Penn WiCS Database</h1>
    {{#if currentUser}}
-	<div>YOU ARE LOGGED IN</div>
+	<p>YOU ARE LOGGED IN</p>
+  		{{> user}}
+  		<h3>Edit Profile:</h3>
+  		<form class="profile">
+    		<p>First Name: <input type="text" name="firstname"></p>
+    		<p>Last Name: <input type="text" name="lastname"></p>
+    		<p><input type="submit" value="Update"></p>
+  		</form>
+
 	{{else}}
 	<div class="container">
 		<div class="row">

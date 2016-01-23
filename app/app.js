@@ -33,9 +33,22 @@ if (Meteor.isClient) {
         event.preventDefault();
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
-        Meteor.loginWithPassword(email, password);
     }
   });
+
+  Template.home.events({
+    'submit form': function(event){
+      event.preventDefault();
+      var first = $('[name=firstname]').val();
+      var last = $('[name=lastname]').val();
+      var data = {
+        first: first,
+        last: last
+      }
+      console.log("Inside submit form", Meteor.user());
+      Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
+    }
+  })
 
   Meteor.loginWithPassword(email, password, function(error){
     if(error){
@@ -51,6 +64,18 @@ if (Meteor.isClient) {
         Meteor.logout();
         Router.go('login');
     }
+  });
+
+  Template.user.helpers({
+  firstName: function() {
+    console.log("Inside first name", Meteor.user());
+    var user = Meteor.user();
+    if (user.profile) {
+      return user.profile.first;
+    } else {
+      return "unknown user";
+    }
+  }
   });
 }
 
