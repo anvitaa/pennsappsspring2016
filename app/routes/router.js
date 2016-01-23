@@ -14,3 +14,8 @@ Router.route('/discussion', {
   name: 'discussion',
   template: 'discussion'
 });
+
+Router.route('/resources', {
+  name: 'resources',
+  template: 'resources'
+});
