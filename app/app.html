@@ -6,19 +6,56 @@
 </head>
 
 <body>
-  	<h1 align="center">Welcome to the Penn WiCS Database</h1>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 col-lg-offset-4">
-				<div class="form">
-					{{> register}}
-				</div>
-				<div class="form">
-					{{> login}}
-				</div>
-			</div>
-		</div>
-	</div>
+
+	<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="#">Bitches Who Code</a>
+        </div>
+
+    <!-- <nav id="topnav-wrapper"> -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{pathFor route='home'}}">Home</a>
+                </li>
+                <li>
+                    <a href="{{pathFor route='members'}}">Members</a>
+                </li>
+                <li>
+                    <a href="{{pathFor route='discussion'}}">Discussion</a>
+                </li>
+                <li>
+                    <a href="#faq">FAQ</a>
+                </li>
+                <li>
+                    <a href="#edit">Edit Profile</a>
+                </li>
+                <li>
+                    <a href="#logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+	<!-- Footer -->
+    <section id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <hr class="small">
+                    <p class="text-muted">Made with <span style="color: #FA8072">♥</span> by the A team </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 <template name="register">
@@ -37,6 +74,26 @@
         <p align="center">Password: <input type="password" name="password"></p>
         <p align="center"><input type="submit" value="Log In"></p>
     </form>
+</template>
+
+<template name="home">
+    <h1 align="center">Welcome to the Penn WiCS Database</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div class="form">
+					{{> register}}
+				</div>
+				<div class="form">
+					{{> login}}
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="dashboard">
+    <h1>Welcome</h1>
 </template>
 
 <template name="hello">

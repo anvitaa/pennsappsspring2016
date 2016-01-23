@@ -44,6 +44,8 @@ if (Meteor.isClient) {
         Router.go("home");
     }
   });
+
+
 }
 
 
@@ -53,3 +55,10 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+Router.route('/register');
+Router.route('/login');
+
+Router.route('/', function () {
+  this.render('dashboard');
+});
