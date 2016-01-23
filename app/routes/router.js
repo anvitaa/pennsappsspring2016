@@ -1,6 +1,6 @@
 // Routes
 Router.configure({
-  layoutTemplate: 'home'
+  layoutTemplate: 'main'
 });
 
 Router.route('/', {
@@ -8,8 +8,13 @@ Router.route('/', {
   template: 'home'
 });
 
-Router.route('/login');
 
-Router.route('/notYetMember');
+Router.route('/discussion', {
+  name: 'discussion',
+  template: 'discussion'
+});
 
-Router.route('/discussion');
+Router.route('/resources', {
+  name: 'resources',
+  template: 'resources'
+});
