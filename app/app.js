@@ -27,24 +27,27 @@ if (Meteor.isClient) {
     }
   });
 
-  
-//   Template.discussion.events({
-//     'click .question': function(event){
-//         event.preventDefault();
-//         $('.hide').toggle();
-//         $(this).toggle();
-//         $('.password').eq(0).toggle();
-// });
 
-// $('.hide').click(function () {
-//     $('.show').toggle();
-//     $(this).toggle();
-//     $('.password').eq(0).toggle();
-// });
-//   });
- 
-//     }
-//   });
+  
+  Template.discussion.events({
+    'click .question': function(event){
+        event.preventDefault();
+        $('.hide').toggle();
+        $(this).toggle();
+        $('.password').eq(0).toggle();
+        //});
+
+        $('.hide').click(function (){
+          $('.show').toggle();
+          $(this).toggle();
+          $('.password').eq(0).toggle();
+        });
+
+
+      }
+
+  });
+
 
 
 

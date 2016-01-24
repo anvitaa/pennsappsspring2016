@@ -171,8 +171,13 @@
     {{/if}}
 </template>
 
-<template name="members">   
-    <p>members list!!!!</p>
+<template name="members">
+
+    <div class="row">
+      <div class="col-md-4">Hello</div>
+      <div class="col-md-4">Hello</div>
+      <div class="col-md-4">Hello</div>
+    </div>
 </template>
 
 <template name="resources">   
@@ -181,9 +186,13 @@
 
 <template name="discussion">   
 
-		 <!-- <input type="button" class="btn btn-primary hide" value="Hide Password" style="display:none;"> -->
-		<button type="button" class = 'question btn btn-default'>Post Question</button>
-       <div>FORUM!!!!</div>
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Post a question</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  </form>
 
 </template>
 
