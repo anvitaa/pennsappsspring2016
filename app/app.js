@@ -58,6 +58,7 @@ if (Meteor.isClient) {
     }
   });
 
+
   Template.user.helpers({
     status: function() {
       var user = Meteor.user();
@@ -93,3 +94,4 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
