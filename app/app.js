@@ -1,7 +1,5 @@
 if (Meteor.isClient) {
   Messages = new Mongo.Collection('messages');
-  
-
 
   Template.register.events({
     'submit form': function(event){
@@ -20,73 +18,68 @@ if (Meteor.isClient) {
   Template.navigation.events({
     'click .logout': function(event){
         event.preventDefault();
-
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();
         Meteor.logout();
     }
   });
 
-  Template.discussion.events({
-    'click .question': function(event){
-        event.preventDefault();
-        $('.hide').toggle();
-        $(this).toggle();
-        $('.password').eq(0).toggle();
-        //});
+  // Template.discussion.events({
+  //   'click .question': function(event){
+  //       event.preventDefault();
+  //       $('.hide').toggle();
+  //       $(this).toggle();
+  //       $('.password').eq(0).toggle();
+  //       //});
 
-        $('.hide').click(function (){
-          $('.show').toggle();
-          $(this).toggle();
-          $('.password').eq(0).toggle();
-        });
-
-
-      }
-
-  });
-
-//   Template.user.helpers({
-//     firstName: function() {
-//       event.preventDefault();
-//       var user = Meteor.user();
-//       if (user.profile) {
-//         return user.profile.first;
-//       } else {
-//         return "unknown user";
-//       }
-//     }
-//   });
+  //       $('.hide').click(function (){
+  //         $('.show').toggle();
+  //         $(this).toggle();
+  //         $('.password').eq(0).toggle();
+  //       });
 
 
-//   Template.user.helpers({
-//     status: function() {
-//       event.preventDefault();
-//       var user = Meteor.user();
-//       if (user.profile) {
-//         return user.profile.status;
-//       } else {
-//         return "Unknown Status";
-//       }
-//     }
-//   });
+  //     }
+
+  // });
   
-  Template.home.events({
+  Template.editprof.events({
     'submit form': function(event){
       event.preventDefault();
       var first = $('[name=firstname]').val();
       var last = $('[name=lastname]').val();
-      var status = $('[name=status]').val();
+      var stat = $('[name=status]').val();
       var data = {
         first: first,
         last: last,
-        status: status
+        stat: stat
       }
-      console.log("Inside submit form", Meteor.user());
       Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
     }
   })
- 
+
+  Template.user.helpers({
+    firstName: function() {
+      var user = Meteor.user();
+      if (user.profile) {
+        return user.profile.first;
+      } else {
+        return "Unknown user.";
+      }
+    }
+  });
+
+  Template.user.helpers({
+    stat: function() {
+      var user = Meteor.user();
+      if (user.profile) {
+        return user.profile.stat;
+      } else {
+        return "Unknown status.";
+      }
+    }
+  });
+
   Template.navigation.events({
     'click .logout': function(event){
         event.preventDefault();

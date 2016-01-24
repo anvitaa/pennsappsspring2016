@@ -131,6 +131,12 @@
     </section>
 </template>
 
+<template name="user">
+	<p>{{firstName}}</p>
+	<p>{{lastName}}</p>
+	<p>{{stat}}</p>
+</template>
+
 <template name="editprof">
 	<div class="container">
 	<div class="row">
@@ -147,6 +153,7 @@
 			</p>
 			<p align="center"><input type="submit" value="Update" class="btn btn-default"></p>
 		</form>
+		{{> user}}
 	</div>
 	</div>
 	</div>
@@ -178,10 +185,6 @@
 			</div>
 		</div>
 	</div>
-</template>
-
-<template name="drive">   
-      <iframe src="https://drive.google.com/embeddedfolderview?id=0Bw3fAEMSqTU3ekxuZ3Vva2tBZVU#list" width="800" height="600" frameborder="0"></iframe>
 </template>
 
 <template name="discussion">   
