@@ -28,3 +28,7 @@ body {
 .navbar ul li a:hover {
     color: black;
 }
+
+.img-responsive {
+	border-radius: 50%;
+}

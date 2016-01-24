@@ -2,6 +2,7 @@ if (Meteor.isClient) {
   Messages = new Mongo.Collection('messages');
   
 
+
   Template.register.events({
     'submit form': function(event){
       event.preventDefault();
@@ -15,6 +16,7 @@ if (Meteor.isClient) {
     }
 
   });
+
   Template.navigation.events({
     'click .logout': function(event){
         event.preventDefault();
@@ -24,6 +26,7 @@ if (Meteor.isClient) {
         Meteor.logout();
     }
   });
+
   
 //   Template.discussion.events({
 //     'click .question': function(event){
@@ -60,7 +63,6 @@ if (Meteor.isClient) {
       Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
     }
   })
-
  
   Template.navigation.events({
     'click .logout': function(event){
@@ -72,6 +74,7 @@ if (Meteor.isClient) {
 
   Template.user.helpers({
     firstName: function() {
+      event.preventDefault();
       var user = Meteor.user();
       if (user.profile) {
         return user.profile.first;
@@ -80,8 +83,10 @@ if (Meteor.isClient) {
       }
     }
   });
+
   Template.user.helpers({
     status: function() {
+      event.preventDefault();
       var user = Meteor.user();
       if (user.profile) {
         return user.profile.status;
@@ -90,32 +95,22 @@ if (Meteor.isClient) {
       }
     }
   });
-  
 
   Template.login.events({
     'submit form': function(event){
       event.preventDefault();
       var email = $('[name=loginemail]').val();
       var password = $('[name=loginpassword]').val();
-      alert(email+ "hishiahfihaih");
       Meteor.loginWithPassword(email, password, function(error){
         if(error){
           console.log(error.reason);
         } else {
-         
           Router.go("home");
         }
       });
-      alert(email+ "works");
     }
-    
   });
-  
-
- 
 }
-
-
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
