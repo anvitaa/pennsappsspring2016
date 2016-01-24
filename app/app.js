@@ -1,7 +1,5 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
+  Messages = new Mongo.Collection('messages');
   
 
   Template.register.events({
@@ -25,7 +23,25 @@ if (Meteor.isClient) {
         var password = $('[name=password]').val();
         Meteor.logout();
     }
-});
+  });
+  
+//   Template.discussion.events({
+//     'click .question': function(event){
+//         event.preventDefault();
+//         $('.hide').toggle();
+//         $(this).toggle();
+//         $('.password').eq(0).toggle();
+// });
+
+// $('.hide').click(function () {
+//     $('.show').toggle();
+//     $(this).toggle();
+//     $('.password').eq(0).toggle();
+// });
+//   });
+ 
+//     }
+//   });
 
 
 
