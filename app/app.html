@@ -34,7 +34,7 @@
     <form class="register_form">
         <p align="center">Email: <input type="email" name="email"></p>
         <p align="center">Password: <input type="password" name="password"></p>
-        <p align="center"><input type="submit" value="Register"></p>
+        <p align="center"><input type="submit" value="Register" class="btn btn-default"></p>
     </form>
 </template>
 
@@ -43,7 +43,7 @@
 	<form class="login_form">
 		<p align="center">Email: <input type="email" name="loginemail"></p>
         <p align="center">Password: <input type="password" name="loginpassword"></p>
-        <p align="center"><input type="submit" value="Log In"></p>
+        <p align="center"><input type="submit" value="Log In" class="btn btn-default"></p>
         <p align="center">Not yet a member?<br><a href="{{pathFor route='notYetMember'}}">Register with your upenn.edu email</a></p>
     </form>
 </template>
@@ -61,11 +61,6 @@
 	</div>
 </template>
 
-<template name="user">
-  <p>{{firstName}}</p>
-  <p>{{status}}</p>
-</template>
-
 <template name="main">
 	{{> yield}}
 </template>
@@ -73,19 +68,46 @@
 <template name="home">
     <h1 align="center">Welcome to the Penn WiCS Database</h1>
     {{#if currentUser}}
-	<p>YOU ARE LOGGED IN</p>
-  		{{> user}}
-  		<h3>Edit Profile:</h3>
-  		<form class="profile">
-    		<p>First Name: <input type="text" name="firstname" value="{{firstName}}"></p>
-    		<p>Last Name: <input type="text" name="lastname"></p>
-    		<p>Current Status: 
-    			<input type="radio" name="status" value="undergrad">Undergrad Student 
-    			<input type="radio" name="status" VALUE="grad">Grad Student
-    			<input type="radio" name="status" VALUE="alumna">Alumna
-    		</p>
-    		<p><input type="submit" value="Update"></p>
-  		</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6">
+				<a href="{{pathFor route='members'}}">
+					<img class="img-responsive" src="/img/dre.png" alt="">
+	                <h4 align="center">Members</h4>
+            	</a>
+			</div>
+			<div class="col-lg-3 col-sm-6">
+				<a href="{{pathFor route='resources'}}">
+					<img class="img-responsive" src="/img/dre.png" alt="">
+	                <h4 align="center">Resources</h4>
+            	</a>
+			</div>
+			<div class="col-lg-3 col-sm-6">
+				<a href="{{pathFor route='discussion'}}">
+					<img class="img-responsive" src="/img/dre.png" alt="">
+	                <h4 align="center">Discussion</h4>
+            	</a>
+			</div>
+			<div class="col-lg-3 col-sm-6">
+				<a href="{{pathFor route='discussion'}}">
+					<img class="img-responsive" src="/img/dre.png" alt="">
+	                <h4 align="center">FAQ</h4>
+	            </a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div class="form">
+					<h3 align = "center">Your Profile:</h3>
+					<p align = "center">{{firstName}}</p>
+	 				<p align = "center">{{status}}</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+		
 	{{else}}
 	<div class="container">
 		<div class="row">
@@ -110,14 +132,36 @@
     </section>
 </template>
 
+<template name="editprof">
+	<div class="container">
+	<div class="row">
+	<div class="col-lg-4 col-lg-offset-4">
+	<div class="form">
+		<h3 align = "center">Edit Profile:</h3>
+		<form class="profile">
+			<p align="center">First Name: <input type="text" name="firstname"></p>
+			<p align="center">Last Name: <input type="text" name="lastname"></p>
+			<p align="center">Current Status: <br>
+				<input type="radio" name="status" value="undergrad">    Undergrad Student 
+				<input type="radio" name="status" value="grad">    Grad Student
+				<input type="radio" name="status" value="alumna">    Alumna
+			</p>
+			<p align="center"><input type="submit" value="Update" class="btn btn-default"></p>
+		</form>
+	</div>
+	</div>
+	</div>
+	</div>
+</template>
+
 <template name="navigation">   
     {{#if currentUser}}
     	<li><a href="{{pathFor route='home'}}">Home</a></li>
         <li><a href="{{pathFor route='members'}}">Members</a> </li>
         <li><a href="{{pathFor route='resources'}}">Resources</a></li>
         <li><a href="{{pathFor route='discussion'}}">Discussion</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#edit">Edit Profile</a></li>
+        <li><a href="{{pathFor route='faq'}}">FAQ</a></li>
+        <li><a href="{{pathFor route='editprof'}}">Edit Profile</a></li>
         <li><a href="#" class="logout">Logout</a></li>
     {{else}}
     	<li><a href="mailto:pennwics@gmail.com">Request Access</a></li>
