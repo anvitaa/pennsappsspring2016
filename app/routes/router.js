@@ -28,11 +28,6 @@ Router.route('/register', {
 	template: 'notYetMember'
 });
 
-Router.route('/members', {
-  name: 'members',
-  template: 'members'
-});
-
 Router.route('/faq', {
   name: 'faq',
   template: 'faq'
