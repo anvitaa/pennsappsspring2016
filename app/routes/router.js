@@ -1,14 +1,12 @@
-
 // Routes
 Router.configure({
   layoutTemplate: 'main'
 });
+
 Router.route('/', {
   name: 'home',
   template: 'home'
 });
-// Router.route('/register');
- Router.route('/login');
 
 Router.route('/discussion', {
   name: 'discussion',
@@ -18,4 +16,9 @@ Router.route('/discussion', {
 Router.route('/resources', {
   name: 'resources',
   template: 'resources'
+});
+
+Router.route('/register', {
+	name: 'notYetMember',
+	template: 'notYetMember'
 });

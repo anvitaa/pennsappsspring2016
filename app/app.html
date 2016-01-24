@@ -44,7 +44,21 @@
 		<p align="center">Email: <input type="email" name="loginemail"></p>
         <p align="center">Password: <input type="password" name="loginpassword"></p>
         <p align="center"><input type="submit" value="Log In"></p>
+        <p align="center">Not yet a member?<br><a href="{{pathFor route='notYetMember'}}">Register with your upenn.edu email</a></p>
     </form>
+</template>
+
+<template name="notYetMember">
+	<h1 align="center">Welcome to the Penn WiCS Database</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div class="form">
+					{{> register}}
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <template name="user">
@@ -58,7 +72,7 @@
 
 <template name="home">
     <h1 align="center">Welcome to the Penn WiCS Database</h1>
-   {{#if currentUser}}
+    {{#if currentUser}}
 	<p>YOU ARE LOGGED IN</p>
   		{{> user}}
   		<h3>Edit Profile:</h3>
@@ -72,14 +86,10 @@
     		</p>
     		<p><input type="submit" value="Update"></p>
   		</form>
-
 	{{else}}
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-4">
-				<div class="form">
-					{{> register}}
-				</div>
 				<div class="form">
 					{{> login}}
 				</div>
@@ -101,6 +111,7 @@
 </template>
 
 <template name="navigation">   
+
         <li><a href="{{pathFor route='home'}}">Home</a></li>
         <li><a href="{{pathFor route='members'}}">Members</a> </li>
         <li><a href="{{pathFor route='resources'}}">Resources</a></li>
@@ -112,10 +123,11 @@
         {{else}}
 			<li><a href="{{pathFor route='login'}}">Log In</a></li>
         {{/if}} 
+
 </template>
 
 <template name="discussion">   
-       <div>FORUM!!!!</div>
+    <p>FORUM!!!!</p>
 </template>
 
 <template name="resources">   
