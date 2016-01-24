@@ -48,29 +48,6 @@ if (Meteor.isClient) {
 
 
 
-  Template.home.events({
-    'submit form': function(event){
-      event.preventDefault();
-      var first = $('[name=firstname]').val();
-      var last = $('[name=lastname]').val();
-      var status = $('[name=status]').val();
-      var data = {
-        first: first,
-        last: last,
-        status: status
-      }
-      console.log("Inside submit form", Meteor.user());
-      Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
-    }
-  })
- 
-  Template.navigation.events({
-    'click .logout': function(event){
-        event.preventDefault();
-        Meteor.logout();
-        Router.go('login');
-    }
-  });
 
   Template.user.helpers({
     firstName: function() {
@@ -96,6 +73,30 @@ if (Meteor.isClient) {
       }
     }
   });
+  Template.home.events({
+    'submit form': function(event){
+      event.preventDefault();
+      var first = $('[name=firstname]').val();
+      var last = $('[name=lastname]').val();
+      var status = $('[name=status]').val();
+      var data = {
+        first: first,
+        last: last,
+        status: status
+      }
+      console.log("Inside submit form", Meteor.user());
+      Meteor.users.update(Meteor.userId(), {$set: {profile: data}});     
+    }
+  })
+ 
+  Template.navigation.events({
+    'click .logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+        Router.go('login');
+    }
+  });
+
 
   Template.login.events({
     'submit form': function(event){

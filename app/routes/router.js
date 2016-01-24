@@ -13,9 +13,9 @@ Router.route('/discussion', {
   template: 'discussion'
 });
 
-Router.route('/resources', {
-  name: 'resources',
-  template: 'resources'
+Router.route('/drive', {
+  name: 'drive',
+  template: 'drive'
 });
 
 Router.route('/members', {
