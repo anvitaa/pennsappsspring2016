@@ -74,7 +74,7 @@ if (Meteor.isClient) {
       event.preventDefault();
       var email = $('[name=loginemail]').val();
       var password = $('[name=loginpassword]').val();
-      alert(email+ "hishiahfihaih");
+      alert(email+ " is invalid");
       Meteor.loginWithPassword(email, password, function(error){
         if(error){
           console.log(error.reason);

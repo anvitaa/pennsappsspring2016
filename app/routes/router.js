@@ -8,7 +8,6 @@ Router.route('/', {
   template: 'home'
 });
 
-
 Router.route('/discussion', {
   name: 'discussion',
   template: 'discussion'
@@ -17,4 +16,9 @@ Router.route('/discussion', {
 Router.route('/resources', {
   name: 'resources',
   template: 'resources'
+});
+
+Router.route('/register', {
+	name: 'notYetMember',
+	template: 'notYetMember'
 });
