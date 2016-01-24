@@ -74,16 +74,13 @@ if (Meteor.isClient) {
       event.preventDefault();
       var email = $('[name=loginemail]').val();
       var password = $('[name=loginpassword]').val();
-      alert(email+ " is invalid");
       Meteor.loginWithPassword(email, password, function(error){
         if(error){
           console.log(error.reason);
         } else {
-         
           Router.go("home");
         }
       });
-      alert(email+ "works");
     }
   });
 }
