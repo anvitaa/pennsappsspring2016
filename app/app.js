@@ -49,6 +49,7 @@ if (Meteor.isClient) {
 
   Template.user.helpers({
     firstName: function() {
+      event.preventDefault();
       var user = Meteor.user();
       if (user.profile) {
         return user.profile.first;
@@ -61,6 +62,7 @@ if (Meteor.isClient) {
 
   Template.user.helpers({
     status: function() {
+      event.preventDefault();
       var user = Meteor.user();
       if (user.profile) {
         return user.profile.status;
@@ -75,16 +77,13 @@ if (Meteor.isClient) {
       event.preventDefault();
       var email = $('[name=loginemail]').val();
       var password = $('[name=loginpassword]').val();
-      alert(email+ " is invalid");
       Meteor.loginWithPassword(email, password, function(error){
         if(error){
           console.log(error.reason);
         } else {
-         
           Router.go("home");
         }
       });
-      alert(email+ "works");
     }
   });
 }

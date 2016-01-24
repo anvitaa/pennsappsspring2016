@@ -27,3 +27,18 @@ Router.route('/register', {
 	name: 'notYetMember',
 	template: 'notYetMember'
 });
+
+Router.route('/members', {
+  name: 'members',
+  template: 'members'
+});
+
+Router.route('/faq', {
+  name: 'faq',
+  template: 'faq'
+});
+
+Router.route('/profile', {
+  name: 'editprof',
+  template: 'editprof'
+});
