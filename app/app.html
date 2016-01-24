@@ -170,6 +170,7 @@
 </template>
 
 <template name="members">
+
     <div class="container">
 		<div class="row">
 			<h1 align="center">Get to know the members</h1>
@@ -179,10 +180,19 @@
 	</div>
 </template>
 
+<template name="drive">   
+      <iframe src="https://drive.google.com/embeddedfolderview?id=0Bw3fAEMSqTU3ekxuZ3Vva2tBZVU#list" width="800" height="600" frameborder="0"></iframe>
+</template>
+
 <template name="discussion">   
-		 <!-- <input type="button" class="btn btn-primary hide" value="Hide Password" style="display:none;"> -->
-		<button type="button" class="question btn btn-default">Post Question</button>
-       <div>FORUM!!!!</div>
+
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Post a question</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  </form>
 </template>
 
 <template name="drive">   
