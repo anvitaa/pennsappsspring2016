@@ -1,9 +1,7 @@
 <head>
-  <title>WiCS Database</title>
-  <!-- Bootstrap Core CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+	<title>WiCS Database</title>
+	<!-- Bootstrap Core CSS -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -78,7 +76,7 @@
             	</a>
 			</div>
 			<div class="col-lg-3 col-sm-6">
-				<a href="{{pathFor route='resources'}}">
+				<a href="{{pathFor route='drive'}}">
 					<img class="img-responsive" src="/img/dre.png" alt="">
 	                <h4 align="center">Resources</h4>
             	</a>
@@ -159,11 +157,11 @@
     {{#if currentUser}}
     	<li><a href="{{pathFor route='home'}}">Home</a></li>
         <li><a href="{{pathFor route='members'}}">Members</a> </li>
-        <li><a href="{{pathFor route='resources'}}">Resources</a></li>
+        <li><a href="{{pathFor route='drive'}}">Resources</a></li>
         <li><a href="{{pathFor route='discussion'}}">Discussion</a></li>
         <li><a href="{{pathFor route='faq'}}">FAQ</a></li>
         <li><a href="{{pathFor route='editprof'}}">Edit Profile</a></li>
-        <li><a href="#" class="logout">Logout</a></li>
+        <li><a href="#" class="logout">Log Out</a></li>
     {{else}}
     	<li><a href="mailto:pennwics@gmail.com">Request Access</a></li>
 		<li><a href="http://wics.cis.upenn.edu/">Penn WiCS</a></li>
@@ -180,7 +178,7 @@
     </div>
 </template>
 
-<template name="resources">   
+<template name="drive">   
       <iframe src="https://drive.google.com/embeddedfolderview?id=0Bw3fAEMSqTU3ekxuZ3Vva2tBZVU#list" width="800" height="600" frameborder="0"></iframe>
 </template>
 
@@ -196,7 +194,7 @@
 
 </template>
 
-<template name="resources">   
+<template name="drive">   
     <span class="glyphicon glyphicon-pencil"></span>
 
       <a href="https://drive.google.com/folderview?id=0Bw3fAEMSqTU3ekxuZ3Vva2tBZVU&usp=sharing">Edit</a>
@@ -205,6 +203,14 @@
 </template>
 
 <template name="faq">   
-    <p>faq!!!!</p>
+    <div class="container">
+		<div class="row">
+			<h1 align="center">FAQ</h1>
+			<div class="col-lg-4 col-sm-6">
+			<p>What are some ways I can get more involved on campus?</p>
+			<p> Join WiCS, the Dining Philosophers, PESP, FemmeHacks, PennApps, and more.</p>
+			</div>
+		</div>
+	</div>
 </template>
 

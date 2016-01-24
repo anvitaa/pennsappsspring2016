@@ -51,6 +51,32 @@ if (Meteor.isClient) {
 
 
 
+
+  // Template.user.helpers({
+  //   firstName: function() {
+  //     event.preventDefault();
+  //     var user = Meteor.user();
+  //     if (user.profile) {
+  //       return user.profile.first;
+  //     } else {
+  //       return "unknown user";
+  //     }
+  //   }
+  // });
+
+
+  // Template.user.helpers({
+  //   status: function() {
+  //     event.preventDefault();
+  //     var user = Meteor.user();
+  //     if (user.profile) {
+  //       return user.profile.status;
+  //     } else {
+  //       return "Unknown Status";
+  //     }
+  //   }
+  // });
+  
   Template.home.events({
     'submit form': function(event){
       event.preventDefault();
@@ -75,30 +101,6 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.user.helpers({
-    firstName: function() {
-      event.preventDefault();
-      var user = Meteor.user();
-      if (user.profile) {
-        return user.profile.first;
-      } else {
-        return "unknown user";
-      }
-    }
-  });
-
-
-  Template.user.helpers({
-    status: function() {
-      event.preventDefault();
-      var user = Meteor.user();
-      if (user.profile) {
-        return user.profile.status;
-      } else {
-        return "Unknown Status";
-      }
-    }
-  });
 
   Template.login.events({
     'submit form': function(event){
