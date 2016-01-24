@@ -1,9 +1,7 @@
 <head>
-  <title>WiCS Database</title>
-  <!-- Bootstrap Core CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+	<title>WiCS Database</title>
+	<!-- Bootstrap Core CSS -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -163,7 +161,7 @@
         <li><a href="{{pathFor route='discussion'}}">Discussion</a></li>
         <li><a href="{{pathFor route='faq'}}">FAQ</a></li>
         <li><a href="{{pathFor route='editprof'}}">Edit Profile</a></li>
-        <li><a href="#" class="logout">Logout</a></li>
+        <li><a href="#" class="logout">Log Out</a></li>
     {{else}}
     	<li><a href="mailto:pennwics@gmail.com">Request Access</a></li>
 		<li><a href="http://wics.cis.upenn.edu/">Penn WiCS</a></li>
@@ -196,6 +194,14 @@
 </template>
 
 <template name="faq">   
-    <p>faq!!!!</p>
+    <div class="container">
+		<div class="row">
+			<h1 align="center">FAQ</h1>
+			<div class="col-lg-4 col-sm-6">
+			<p>What are some ways I can get more involved on campus?</p>
+			<p> Join WiCS, the Dining Philosophers, PESP, FemmeHacks, PennApps, and more.</p>
+			</div>
+		</div>
+	</div>
 </template>
 
