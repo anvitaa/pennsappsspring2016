@@ -100,8 +100,7 @@
 			<div class="col-lg-4 col-lg-offset-4">
 				<div class="form">
 					<h3 align = "center">Your Profile:</h3>
-					<p align = "center">{{firstName}}</p>
-	 				<p align = "center">{{status}}</p>
+					{{> user}}
 				</div>
 			</div>
 		</div>
@@ -132,9 +131,9 @@
 </template>
 
 <template name="user">
-	<p>{{firstName}}</p>
-	<p>{{lastName}}</p>
-	<p>{{stat}}</p>
+	<p>First name: {{firstName}}</p>
+	<p>Last name: {{lastName}}</p>
+	<p>Status: {{stat}}</p>
 </template>
 
 <template name="editprof">
@@ -147,9 +146,9 @@
 			<p align="center">First Name: <input type="text" name="firstname"></p>
 			<p align="center">Last Name: <input type="text" name="lastname"></p>
 			<p align="center">Current Status: <br>
-				<input type="radio" name="status" value="undergrad">    Undergrad Student 
-				<input type="radio" name="status" value="grad">    Grad Student
-				<input type="radio" name="status" value="alumna">    Alumna
+				<input type="radio" name="stat" value="undergrad">    Undergrad Student 
+				<input type="radio" name="stat" value="grad">    Grad Student
+				<input type="radio" name="stat" value="alumna">    Alumna
 			</p>
 			<p align="center"><input type="submit" value="Update" class="btn btn-default"></p>
 		</form>
@@ -208,8 +207,22 @@
 		<div class="row">
 			<h1 align="center">FAQ</h1>
 			<div class="col-lg-4 col-sm-6">
-			<p>What are some ways I can get more involved on campus?</p>
-			<p> Join WiCS, the Dining Philosophers, PESP, FemmeHacks, PennApps, and more.</p>
+				<div class="form">
+					<h3 align="center">What are some ways I can get more involved on campus?</h3>
+					<p align="center"> Join WiCS, the Dining Philosophers, PESP, FemmeHacks, PennApps, and more.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="form">
+					<h3 align="center">Who built this and why?</h3>
+					<p align="center"> Amelia, Andrea, and Anvita (the A-team) built this after realizing that there's so much info out there for us but isn't centralized anywhere. We want to make the network of women in computer science at Penn tighter, and hope this will help.</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="form">
+					<h3 align="center">How can I help?</h3>
+					<p align="center">Add information to the resources tab! Update your profile! Reach out to others!</p>
+				</div>
 			</div>
 		</div>
 	</div>

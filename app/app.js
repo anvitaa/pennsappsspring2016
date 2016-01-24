@@ -48,7 +48,7 @@ if (Meteor.isClient) {
       event.preventDefault();
       var first = $('[name=firstname]').val();
       var last = $('[name=lastname]').val();
-      var stat = $('[name=status]').val();
+      var stat = $('[name=stat]').val();
       var data = {
         first: first,
         last: last,
@@ -65,6 +65,17 @@ if (Meteor.isClient) {
         return user.profile.first;
       } else {
         return "Unknown user.";
+      }
+    }
+  });
+
+  Template.user.helpers({
+    lastName: function() {
+      var user = Meteor.user();
+      if (user.profile) {
+        return user.profile.last;
+      } else {
+        return "Unknown status.";
       }
     }
   });
