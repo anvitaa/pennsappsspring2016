@@ -18,14 +18,14 @@ Router.route('/resources', {
   template: 'resources'
 });
 
-Router.route('/register', {
-	name: 'notYetMember',
-	template: 'notYetMember'
-});
-
 Router.route('/members', {
   name: 'members',
   template: 'members'
+});
+
+Router.route('/register', {
+	name: 'notYetMember',
+	template: 'notYetMember'
 });
 
 Router.route('/faq', {

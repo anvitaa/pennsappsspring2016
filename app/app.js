@@ -84,6 +84,7 @@ if (Meteor.isClient) {
     }
   });
 
+
   Template.user.helpers({
     status: function() {
       event.preventDefault();
@@ -117,3 +118,4 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
